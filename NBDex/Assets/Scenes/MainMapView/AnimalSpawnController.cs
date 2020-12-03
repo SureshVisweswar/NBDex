@@ -10,6 +10,7 @@ public class AnimalSpawnController : MonoBehaviour
     private AbstractLocationProvider _locationProvider = null;
 
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject[] animals;
 
     private float nextSpawnActionTime = 0.0f;
     private float period = 10.0f;
@@ -57,10 +58,17 @@ public class AnimalSpawnController : MonoBehaviour
                             if(getSpawn(peregrineFalcon))
                             {
                                 //Code to spawn falcon
+                                print("Spawnin Ducks Babyyyyyyyyyy");
                                 Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
                                 Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
+                                
+                                GameObject newDuck = Instantiate(animals[0], animals[0].transform) as GameObject;
+                                newDuck.transform.position = spawnPos;
 
-
+                            }
+                            else
+                            {
+                                print("Naht Yet");
                             }
                         }
                     }
