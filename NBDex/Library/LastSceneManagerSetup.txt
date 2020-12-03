@@ -1,5 +1,9 @@
 sceneSetups:
 - path: Assets/Scenes/MainMapView/MainMapView.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/MapboxSDK/Mapbox/Examples/0_PrefabScenes/Location-basedGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

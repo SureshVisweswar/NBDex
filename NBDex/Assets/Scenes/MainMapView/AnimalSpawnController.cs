@@ -6,10 +6,13 @@ using Mapbox.Utils;
 
 public class AnimalSpawnController : MonoBehaviour
 {
-    [SerializeField] private LocationProviderFactory locationProvider;
-    
+    private bool debugMode = true;
+    private AbstractLocationProvider _locationProvider = null;
+
+    [SerializeField] private GameObject player;
+
     private float nextSpawnActionTime = 0.0f;
-    public float period = 10.0f;
+    private float period = 10.0f;
 
     //Spawn Rates
     private double peregrineFalcon = 0.1;
@@ -20,13 +23,64 @@ public class AnimalSpawnController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (_locationProvider == null)
+		{
+			_locationProvider = LocationProviderFactory.Instance.DefaultLocationProvider as AbstractLocationProvider;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //double locX = locationProvider.CurrentLocation.LatitudeLongitude.x;
-        //double locY = locationProvider.CurrentLocation.LatitudeLongitude.y;
+        Location curLocation = _locationProvider.CurrentLocation;
+        nextSpawnActionTime += Time.deltaTime;
+
+        if (!curLocation.IsLocationServiceInitializing)
+        {
+            if(!curLocation.IsLocationServiceEnabled)
+            {
+                Debug.Log("Location services not enabled");
+            }
+            else
+            {
+                if (curLocation.LatitudeLongitude.Equals(Vector2d.zero))
+                {
+                    Debug.Log("Waiting for location ....");
+                }
+                else
+                {
+                    if((curLocation.LatitudeLongitude.x > spawnRange[2] && curLocation.LatitudeLongitude.x < spawnRange[0] && curLocation.LatitudeLongitude.y > spawnRange[3] && curLocation.LatitudeLongitude.y < spawnRange[1]) || debugMode) 
+                    {
+                        if (nextSpawnActionTime >= period)
+                        {
+                            nextSpawnActionTime = nextSpawnActionTime - period;
+                            if(getSpawn(peregrineFalcon))
+                            {
+                                //Code to spawn falcon
+                                Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
+                                Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
+
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private float getSpawnCoord(float coord)
+    {
+        System.Random rng = new System.Random();
+
+        return (float)((Random.Range(0,2) * 2 - 1) * rng.Next((int)(coord + 10), (int)(coord + 20)));
+    }
+
+    private bool getSpawn(double probability) 
+    {
+        int intProb = (int)(probability * 100);
+        System.Random rng = new System.Random();
+
+        return rng.Next(100) <= intProb;
     }
 }
