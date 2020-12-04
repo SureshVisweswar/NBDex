@@ -16,7 +16,7 @@ public class AnimalSpawnController : MonoBehaviour
     private float period = 10.0f;
 
     //Spawn Rates
-    private double peregrineFalcon = 0.1;
+    private double peregrineFalcon = 0.5;
 
     //Spawn Locations
     private double[] spawnRange = {45.47168826, -66.42745972, 45.23331631, -65.72502136};

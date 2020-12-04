@@ -8,6 +8,10 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Button profileButton;
     [SerializeField] private Button NBDexButton;
+    [SerializeField] private GameObject ProfileMenu;
+    [SerializeField] private GameObject NBDexMenu;
+    [SerializeField] private GameObject ProfileBackground;
+    [SerializeField] private GameObject CollectionBackground;
 
     private void Awake() {
         Assert.IsNotNull(profileButton);
@@ -15,10 +19,39 @@ public class UIManager : MonoBehaviour
     }
 
     public void openProfileMenu() {
-        Debug.Log("In Prof Func");
+        profileButton.gameObject.SetActive(false);
+        NBDexButton.gameObject.SetActive(false);
+        ProfileMenu.gameObject.SetActive(true);
     }
 
     public void openNBDex() {
-        Debug.Log("In NB Func");
+        profileButton.gameObject.SetActive(false);
+        NBDexButton.gameObject.SetActive(false);
+        NBDexMenu.gameObject.SetActive(true);
+    }
+
+    public void closeProfileMenu() {
+        profileButton.gameObject.SetActive(true);
+        NBDexButton.gameObject.SetActive(true);
+        ProfileMenu.gameObject.SetActive(false);
+    }
+
+    public void closeNBDex()
+    {
+        profileButton.gameObject.SetActive(true);
+        NBDexButton.gameObject.SetActive(true);
+        NBDexMenu.gameObject.SetActive(false);
+    }
+
+    public void openCollectionMenu()
+    {
+        ProfileBackground.gameObject.SetActive(false);
+        CollectionBackground.gameObject.SetActive(true);
+    }
+
+    public void closeCollectionMenu()
+    {
+        ProfileBackground.gameObject.SetActive(true);
+        CollectionBackground.gameObject.SetActive(false);
     }
 }
