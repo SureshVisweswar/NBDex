@@ -1,2 +1,5 @@
 NBDex/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
 NBDex/Library/PackageCache/com.ptc.vuforia.engine@9.6.3/Vuforia/Plugins/iOS/Vuforia.framework/Vuforia filter=lfs diff=lfs merge=lfs -text
+\[Testing/Library/ArtifactDB\] filter=lfs diff=lfs merge=lfs -text
+Testing/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
+Testing/Library/PackageCache/com.ptc.vuforia.engine@9.6.3/Vuforia/Plugins/iOS/Vuforia.framework/Vuforia filter=lfs diff=lfs merge=lfs -text
