@@ -18,6 +18,7 @@ ScriptsOnlyBuild:
     - ScriptablePalette
     - UIInterface
     - UnityARKitPluginSettings
+    - ontap
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -49,7 +50,7 @@ ScriptsOnlyBuild:
     - DefaultInitializationErrorHandler
     - DefaultTrackableEventHandler
   sceneClasses:
-    Assets/Scenes/Animal Scenes/Wolf.unity:
+    Assets/Scenes/Animal Scenes/Duck.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -97,73 +98,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11466}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11968}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 11862}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 11974}
     - Class: 114
-      Script: {instanceID: 12212}
+      Script: {instanceID: 12038}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 12072}
     - Class: 114
-      Script: {instanceID: 12228}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 12232}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12270}
     - Class: 114
-      Script: {instanceID: 12292}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12420}
+      Script: {instanceID: 12320}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12424}
     - Class: 114
-      Script: {instanceID: 12454}
+      Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12606}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12612}
+      Script: {instanceID: 12610}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 13084}
+      Script: {instanceID: 13086}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13730}
+      Script: {instanceID: 13316}
     - Class: 114
-      Script: {instanceID: 13782}
+      Script: {instanceID: 13540}
     - Class: 114
-      Script: {instanceID: 13954}
+      Script: {instanceID: 13736}
     - Class: 114
-      Script: {instanceID: 14098}
+      Script: {instanceID: 13788}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14436}
+      Script: {instanceID: 14104}
+    - Class: 114
+      Script: {instanceID: 14130}
     - Class: 114
       Script: {instanceID: 14442}
     - Class: 114
-      Script: {instanceID: 14502}
+      Script: {instanceID: 14448}
     - Class: 114
-      Script: {instanceID: 14526}
+      Script: {instanceID: 14508}
     - Class: 114
-      Script: {instanceID: 14658}
+      Script: {instanceID: 14532}
     - Class: 114
-      Script: {instanceID: 15190}
+      Script: {instanceID: 14664}
     - Class: 114
-      Script: {instanceID: 15422}
+      Script: {instanceID: 15196}
     - Class: 114
-      Script: {instanceID: 43042}
+      Script: {instanceID: 15428}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -231,6 +234,18 @@ ScriptsOnlyBuild:
     assemblyName: Vuforia.UnityExtensions.dll
     namespaceName: Vuforia
     className: AnchorBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: ff1cfd768b207053e073f8002f937b81
+    assemblyName: Vuforia.UnityExtensions.dll
+    namespaceName: Vuforia
+    className: AnchorInputListenerBehaviour
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -579,12 +594,6 @@ ScriptsOnlyBuild:
     assemblyName: Vuforia.UnityExtensions.dll
     namespaceName: Vuforia
     className: AnchorBehaviour
-  - hash:
-      serializedVersion: 2
-      Hash: ff1cfd768b207053e073f8002f937b81
-    assemblyName: Vuforia.UnityExtensions.dll
-    namespaceName: Vuforia
-    className: AnchorInputListenerBehaviour
   - hash:
       serializedVersion: 2
       Hash: 127837f608f41b15774badb9a5791616
@@ -939,12 +948,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples
     className: FeatureUiMarker
-  - hash:
-      serializedVersion: 2
-      Hash: cc4274b586df3c02688bac01b88bd16c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.EventSystems
-    className: EventSystem
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -1571,6 +1574,12 @@ ScriptsOnlyBuild:
     className: MapVisualizerPerformance
   - hash:
       serializedVersion: 2
+      Hash: bdafe190bf64d198d5f83e79649c608e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIInterface
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
@@ -1761,6 +1770,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Unity.Utilities
     className: OpenUrlOnButtonClick
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ontap
   - hash:
       serializedVersion: 2
       Hash: a7c91ead796087612ab9b5731410c7c5
@@ -2955,19 +2970,7 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Unity.MeshGeneration.Modifiers
     className: ModifierStack
-  - hash:
-      serializedVersion: 2
-      Hash: d87c9fbf120a4af29b55a90cc281cf5a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIInterface
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ontap
   platform: 13
   scenePathNames:
-  - Assets/Scenes/Animal Scenes/Wolf.unity
+  - Assets/Scenes/Animal Scenes/Duck.unity
   playerPath: C:/Users/sures/Testing/test.apk
