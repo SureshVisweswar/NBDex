@@ -3,3 +3,4 @@ NBDex/Library/PackageCache/com.ptc.vuforia.engine@9.6.3/Vuforia/Plugins/iOS/Vufo
 \[Testing/Library/ArtifactDB\] filter=lfs diff=lfs merge=lfs -text
 Testing/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
 Testing/Library/PackageCache/com.ptc.vuforia.engine@9.6.3/Vuforia/Plugins/iOS/Vuforia.framework/Vuforia filter=lfs diff=lfs merge=lfs -text
+NBDex/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_0_1.so filter=lfs diff=lfs merge=lfs -text

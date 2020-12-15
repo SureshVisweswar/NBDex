@@ -24,7 +24,6 @@ public class AnimalClick : MonoBehaviour
                 if (hit.transform)
                 {
                     PrintName(hit.transform.gameObject);
-                    SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
                 }
             }
         }

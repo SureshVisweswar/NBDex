@@ -12,11 +12,23 @@ public class AnimalSpawnController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject[] animals;
 
-    private float nextSpawnActionTime = 0.0f;
-    private float period = 10.0f;
+    //Spawn Timers
+    private float nextSpawnWolf = 0.0f;
+    private float nextSpawnEagle = 0.0f;
+    private float nextSpawnMallard = 0.0f;
+    private float nextSpawnDeer = 0.0f;
+
+    //Spawn Trigger Periods
+    private float spawnPeriodWolf = 1500.0f;
+    private float spawnPeriodEagle = 300.0f;
+    private float spawnPeriodMallard = 45.0f;
+    private float spawnPeriodDeer = 120.0f;
 
     //Spawn Rates
-    private double peregrineFalcon = 0.5;
+    private double wolfRate = 0.01;
+    private double eagleRate = 0.05;
+    private double mallardRate = 0.3;
+    private double deerRate = 0.25;
 
     //Spawn Locations
     private double[] spawnRange = {45.47168826, -66.42745972, 45.23331631, -65.72502136};
@@ -34,7 +46,10 @@ public class AnimalSpawnController : MonoBehaviour
     void Update()
     {
         Location curLocation = _locationProvider.CurrentLocation;
-        nextSpawnActionTime += Time.deltaTime;
+        nextSpawnWolf += Time.deltaTime;
+        nextSpawnEagle += Time.deltaTime;
+        nextSpawnMallard += Time.deltaTime;
+        nextSpawnDeer += Time.deltaTime;
 
         if (!curLocation.IsLocationServiceInitializing)
         {
@@ -50,25 +65,101 @@ public class AnimalSpawnController : MonoBehaviour
                 }
                 else
                 {
-                    if((curLocation.LatitudeLongitude.x > spawnRange[2] && curLocation.LatitudeLongitude.x < spawnRange[0] && curLocation.LatitudeLongitude.y > spawnRange[3] && curLocation.LatitudeLongitude.y < spawnRange[1]) || debugMode) 
+                    if ((curLocation.LatitudeLongitude.x > spawnRange[2] && curLocation.LatitudeLongitude.x < spawnRange[0] && curLocation.LatitudeLongitude.y > spawnRange[3] && curLocation.LatitudeLongitude.y < spawnRange[1]) || debugMode) 
                     {
-                        if (nextSpawnActionTime >= period)
+                        if (nextSpawnWolf >= spawnPeriodWolf) 
                         {
-                            nextSpawnActionTime = nextSpawnActionTime - period;
-                            if(getSpawn(peregrineFalcon))
+                            nextSpawnWolf = nextSpawnWolf - spawnPeriodWolf;
+
+                            if (getSpawn(wolfRate))
                             {
-                                //Code to spawn falcon
-                                print("Spawnin Ducks Babyyyyyyyyyy");
+                                print("Spawnin Wolves Babyyyyyyyyyy");
+
                                 Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
                                 Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
-                                
-                                GameObject newDuck = Instantiate(animals[0], animals[0].transform) as GameObject;
-                                newDuck.transform.position = spawnPos;
 
+                                GameObject newWolf = Instantiate(animals[3], animals[3].transform) as GameObject;
+                                newWolf.transform.position = spawnPos;
+
+                                var euler = newWolf.transform.eulerAngles;
+                                euler.z = Random.Range(0.0f, 360.0f);
+                                newWolf.transform.eulerAngles = euler;
                             }
                             else
                             {
-                                print("Naht Yet");
+                                print("Naht Yet Wolf");
+                            }
+                        }
+
+                        if (nextSpawnEagle >= spawnPeriodEagle)
+                        {
+                            nextSpawnEagle = nextSpawnEagle - spawnPeriodEagle;
+
+                            if (getSpawn(eagleRate))
+                            {
+                                print("Spawnin Eagles Babyyyyyyyyyy");
+
+                                Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
+                                Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
+
+                                GameObject newEagle = Instantiate(animals[2], animals[2].transform) as GameObject;
+                                newEagle.transform.position = spawnPos;
+
+                                var euler = newEagle.transform.eulerAngles;
+                                euler.z = Random.Range(0.0f, 360.0f);
+                                newEagle.transform.eulerAngles = euler;
+                            }
+                            else
+                            {
+                                print("Naht Yet Eagle");
+                            }
+                        }
+
+                        if (nextSpawnMallard >= spawnPeriodMallard)
+                        {
+                            nextSpawnMallard = nextSpawnMallard - spawnPeriodMallard;
+
+                            if (getSpawn(mallardRate))
+                            {
+                                print("Spawnin Ducks Babyyyyyyyyyy");
+
+                                Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
+                                Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
+
+                                GameObject newMallard = Instantiate(animals[0], animals[0].transform) as GameObject;
+                                newMallard.transform.position = spawnPos;
+
+                                var euler = newMallard.transform.eulerAngles;
+                                euler.z = Random.Range(0.0f, 360.0f);
+                                newMallard.transform.eulerAngles = euler;
+                            }
+                            else
+                            {
+                                print("Naht Yet Mallard");
+                            }
+                        }
+
+                        if (nextSpawnDeer >= spawnPeriodDeer)
+                        {
+                            nextSpawnDeer = nextSpawnDeer - spawnPeriodDeer;
+
+                            if (getSpawn(deerRate))
+                            {
+                                print("Spawnin Deer Babyyyyyyyyyy");
+
+                                Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
+                                Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
+
+                                GameObject newDeer = Instantiate(animals[1], animals[1].transform) as GameObject;
+                                newDeer.transform.position = spawnPos;
+
+                                var euler = newDeer.transform.eulerAngles;
+                                euler.z = Random.Range(0.0f, 360.0f);
+                                newDeer.transform.eulerAngles = euler;
+                            }
+                            else
+                            {
+                                print("Naht Yet Deer");
                             }
                         }
                     }

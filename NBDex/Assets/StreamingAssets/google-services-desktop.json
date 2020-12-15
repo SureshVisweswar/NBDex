@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "996030502611",
+    "firebase_url": "https://nbdex-3141c-default-rtdb.firebaseio.com",
+    "project_id": "nbdex-3141c",
+    "storage_bucket": "nbdex-3141c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996030502611:android:66a8720194aff6ca4d2626",
+        "android_client_info": {
+          "package_name": "com.NBDexCompany.NBDex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996030502611-m0clbiihj6h6m7d9p6eh0mg452j8lt0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7J4PF1oLPcsq5ebi4pEqrFBcNdlcLyVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996030502611-m0clbiihj6h6m7d9p6eh0mg452j8lt0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
