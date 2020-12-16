@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIInterface : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class UIInterface : MonoBehaviour
     [SerializeField] private Button EndEncounter;
     [SerializeField] private GameObject InfoMenu;
     [SerializeField] private GameObject BuildingMenu;
+    [SerializeField] private GameObject animal;
+    [SerializeField] private GameObject conMenu;
+    [SerializeField] private GameObject failmenu;
+    public string value = "nothing";
+    
 
     private void Awake()
     {
@@ -49,6 +55,29 @@ public class UIInterface : MonoBehaviour
         EndEncounter.gameObject.SetActive(true);
         Building.gameObject.SetActive(true);
         BuildingMenu.gameObject.SetActive(false);
+    }
+    public void correctoption()
+    {
+        value = "success";
+        conMenu.gameObject.SetActive(true);
+        animal.gameObject.SetActive(true);
+        closeBuildingMenu();
+        Building.gameObject.SetActive(false);
+    }
+    public void wrongoption()
+    {
+        value = "fail";
+        closeBuildingMenu();
+        failmenu.gameObject.SetActive(true);
+        Building.gameObject.SetActive(false);
+    }
+    public void endencounter()
+    {
+        SceneManager.LoadScene("MainMapView");
+    }
+    private void OnDisable()
+    {
+        PlayerPrefs.SetString("value", value);
     }
 
 

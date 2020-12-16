@@ -18,9 +18,14 @@ ScriptsOnlyBuild:
     - ScriptablePalette
     - UIInterface
     - UnityARKitPluginSettings
-    - ontap
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -88,85 +93,85 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11448}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11636}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11642}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11646}
     - Class: 114
-      Script: {instanceID: 11466}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11500}
+      Script: {instanceID: 11726}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 11862}
+      Script: {instanceID: 12106}
     - Class: 114
-      Script: {instanceID: 11974}
+      Script: {instanceID: 12222}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 12286}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12328}
     - Class: 114
-      Script: {instanceID: 12218}
+      Script: {instanceID: 12500}
     - Class: 114
-      Script: {instanceID: 12232}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 12270}
+      Script: {instanceID: 12552}
     - Class: 114
-      Script: {instanceID: 12294}
+      Script: {instanceID: 12576}
     - Class: 114
-      Script: {instanceID: 12296}
+      Script: {instanceID: 12578}
     - Class: 114
-      Script: {instanceID: 12320}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 12610}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 12684}
+      Script: {instanceID: 12984}
     - Class: 114
-      Script: {instanceID: 13086}
+      Script: {instanceID: 13400}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13418}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 13646}
     - Class: 114
-      Script: {instanceID: 13540}
+      Script: {instanceID: 13882}
     - Class: 114
-      Script: {instanceID: 13736}
+      Script: {instanceID: 14102}
     - Class: 114
-      Script: {instanceID: 13788}
+      Script: {instanceID: 14156}
     - Class: 114
-      Script: {instanceID: 13960}
+      Script: {instanceID: 14344}
     - Class: 114
-      Script: {instanceID: 14104}
+      Script: {instanceID: 14498}
     - Class: 114
-      Script: {instanceID: 14130}
+      Script: {instanceID: 14524}
     - Class: 114
-      Script: {instanceID: 14442}
+      Script: {instanceID: 14846}
     - Class: 114
-      Script: {instanceID: 14448}
+      Script: {instanceID: 14852}
     - Class: 114
-      Script: {instanceID: 14508}
+      Script: {instanceID: 14918}
     - Class: 114
-      Script: {instanceID: 14532}
+      Script: {instanceID: 14944}
     - Class: 114
-      Script: {instanceID: 14664}
+      Script: {instanceID: 15080}
     - Class: 114
-      Script: {instanceID: 15196}
+      Script: {instanceID: 15632}
     - Class: 114
-      Script: {instanceID: 15428}
+      Script: {instanceID: 15868}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -552,6 +557,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARPlaneManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Firebase.Platform.dll
+    namespaceName: Firebase.Platform
+    className: FirebaseMonoBehaviour
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1574,7 +1585,7 @@ ScriptsOnlyBuild:
     className: MapVisualizerPerformance
   - hash:
       serializedVersion: 2
-      Hash: bdafe190bf64d198d5f83e79649c608e
+      Hash: b6f2061bd7fe27d0e179204a19c06220
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIInterface
@@ -1772,12 +1783,6 @@ ScriptsOnlyBuild:
     className: OpenUrlOnButtonClick
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ontap
-  - hash:
-      serializedVersion: 2
       Hash: a7c91ead796087612ab9b5731410c7c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples
@@ -1869,12 +1874,18 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SSTools
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARPointCloudParticleVisualizer
   - hash:
       serializedVersion: 2
-      Hash: 647a33b80d7e6746280c4f356e768ca0
+      Hash: 73adb56b23d6567d3be5bc1156e551c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -2202,6 +2213,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples
     className: PoiLabelTextSetter
+  - hash:
+      serializedVersion: 2
+      Hash: 32cfa1d7514683ef31cd99c322c79abb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoginBackgroundSpin
   - hash:
       serializedVersion: 2
       Hash: 893dbdbfe611d62e230a686ea89f1efd
