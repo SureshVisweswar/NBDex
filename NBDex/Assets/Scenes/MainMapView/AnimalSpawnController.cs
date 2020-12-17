@@ -21,14 +21,14 @@ public class AnimalSpawnController : MonoBehaviour
     //Spawn Trigger Periods
     private float spawnPeriodWolf = 1500.0f;
     private float spawnPeriodEagle = 300.0f;
-    private float spawnPeriodMallard = 45.0f;
+    private float spawnPeriodMallard = 30.0f;
     private float spawnPeriodDeer = 120.0f;
 
     //Spawn Rates
-    private double wolfRate = 0.01;
-    private double eagleRate = 0.05;
-    private double mallardRate = 0.3;
-    private double deerRate = 0.25;
+    private double wolfRate = 0.2;
+    private double eagleRate = 0.3;
+    private double mallardRate = 0.5;
+    private double deerRate = 0.5;
 
     //Spawn Locations
     private double[] spawnRange = {45.47168826, -66.42745972, 45.23331631, -65.72502136};
@@ -147,7 +147,8 @@ public class AnimalSpawnController : MonoBehaviour
                             {
                                 print("Spawnin Deer Babyyyyyyyyyy");
 
-                                Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
+                                //Deer not implemented yet
+                                /*Vector3 localPos = LocationProviderFactory.Instance.mapManager.GeoToWorldPosition(curLocation.LatitudeLongitude);
                                 Vector3 spawnPos = new Vector3(getSpawnCoord(localPos.x), localPos.y, getSpawnCoord(localPos.z));
 
                                 GameObject newDeer = Instantiate(animals[1], animals[1].transform) as GameObject;
@@ -155,7 +156,7 @@ public class AnimalSpawnController : MonoBehaviour
 
                                 var euler = newDeer.transform.eulerAngles;
                                 euler.z = Random.Range(0.0f, 360.0f);
-                                newDeer.transform.eulerAngles = euler;
+                                newDeer.transform.eulerAngles = euler;*/
                             }
                             else
                             {
@@ -172,7 +173,7 @@ public class AnimalSpawnController : MonoBehaviour
     {
         System.Random rng = new System.Random();
 
-        return (float)((Random.Range(0,2) * 2 - 1) * rng.Next((int)(coord + 10), (int)(coord + 20)));
+        return (float)((Random.Range(0,2) * 2 - 1) * rng.Next((int)(coord + 3), (int)(coord + 6)));
     }
 
     private bool getSpawn(double probability) 

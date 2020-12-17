@@ -23,7 +23,36 @@ public class AnimalClick : MonoBehaviour
             {
                 if (hit.transform)
                 {
-                    PrintName(hit.transform.gameObject);
+                    if (hit.transform.gameObject.name == "Duck(Clone)")
+                    {
+                        Destroy(hit.transform.gameObject);
+                        PlayerPrefs.SetString("sceneEntered", "Duck");
+                        SceneManager.LoadScene("Duck");
+                    }
+                    else if (hit.transform.gameObject.name == "Deer(Clone)") { 
+                        //Nothing here yet
+                    }
+                    else if (hit.transform.gameObject.name == "Eagle(Clone)")
+                    {
+                        Destroy(hit.transform.gameObject);
+                        bool sceneSelect = (Random.Range(0, 2) == 0);
+
+                        if (sceneSelect)
+                        {
+                            PlayerPrefs.SetString("sceneEntered", "Eagle1");
+                            SceneManager.LoadScene("Eagle1");
+                        }
+                        else {
+                            PlayerPrefs.SetString("sceneEntered", "Eagle2");
+                            SceneManager.LoadScene("Eagle2");
+                        }
+                    }
+                    else if (hit.transform.gameObject.name == "Wolf(Clone)")
+                    {
+                        Destroy(hit.transform.gameObject);
+                        PlayerPrefs.SetString("sceneEntered", "Wolf");
+                        SceneManager.LoadScene("Wolf");
+                    }
                 }
             }
         }

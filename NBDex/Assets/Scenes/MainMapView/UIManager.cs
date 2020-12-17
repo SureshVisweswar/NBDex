@@ -26,10 +26,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject LocationBasedGame;
     [SerializeField] private GameObject AnimalController;
 
+    [SerializeField] private GameObject MallardButtonText;
+    [SerializeField] private GameObject EagleButtonText;
+    [SerializeField] private GameObject WolfButtonText;
+
+    [SerializeField] private GameObject MallardMenu;
+    [SerializeField] private GameObject EagleMenu;
+    [SerializeField] private GameObject WolfMenu;
+
     private Firebase.FirebaseApp app;
     private Firebase.Auth.FirebaseAuth auth;
     private DatabaseReference db;
     private Firebase.Auth.FirebaseUser currentUser;
+
+    private bool userHasDuck = false;
+    private bool userHasEagle = false;
+    private bool userHasWolf = false;
 
     private void Awake() {
     }
@@ -55,6 +67,30 @@ public class UIManager : MonoBehaviour
                 // Firebase Unity SDK is not safe to use here.
             }
         });
+
+        if (PlayerPrefs.GetString("value") != "nothing") {
+            if (PlayerPrefs.GetString("value") != "success") {
+                if (PlayerPrefs.GetString("sceneEntered") == "Duck") {
+                    //FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Duck").SetValueAsync(true);
+                }
+                else if (PlayerPrefs.GetString("sceneEntered") == "Eagle1")
+                {
+                    //FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Eagle").SetValueAsync(true);
+                }
+                else if (PlayerPrefs.GetString("sceneEntered") == "Eagle2")
+                {
+                    //FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Eagle").SetValueAsync(true);
+                }
+                else if (PlayerPrefs.GetString("sceneEntered") == "Wolf")
+                {
+                    //FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Wolf").SetValueAsync(true);
+                }
+
+                PlayerPrefs.SetString("value", "nothing");
+            } else {
+                PlayerPrefs.SetString("value", "nothing");
+            }
+        }
     }
 
     public void signIn() {
@@ -113,6 +149,53 @@ public class UIManager : MonoBehaviour
         profileButton.gameObject.SetActive(false);
         NBDexButton.gameObject.SetActive(false);
         NBDexMenu.gameObject.SetActive(true);
+
+        /*FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Duck").GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
+            {
+                ShowToast("Error Retrieving NBDex");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                if ((bool)snapshot.GetValue(true) == true) {
+                    MallardButtonText.gameObject.GetComponent<Text>().text = "Mallard";
+                    userHasDuck = true;
+                }
+            }
+        });
+
+        FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Eagle").GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
+            {
+                ShowToast("Error Retrieving NBDex");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                if ((bool)snapshot.GetValue(true) == true)
+                {
+                    MallardButtonText.gameObject.GetComponent<Text>().text = "Eagle";
+                    userHasEagle = true;
+                }
+            }
+        });
+
+        FirebaseDatabase.DefaultInstance.GetReference("/users/" + currentUser.UserId + "/NBDex/").Child("Wolf").GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
+            {
+                ShowToast("Error Retrieving NBDex");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                if ((bool)snapshot.GetValue(true) == true)
+                {
+                    MallardButtonText.gameObject.GetComponent<Text>().text = "Wolf";
+                    userHasWolf = true;
+                }
+            }
+        */
     }
 
     public void openCreateAccountMenu() {
@@ -158,6 +241,47 @@ public class UIManager : MonoBehaviour
         NBDexButton.gameObject.SetActive(true);
         LocationBasedGame.gameObject.SetActive(true);
         AnimalController.gameObject.SetActive(true);
+    }
+
+    public void openMallardNBDex() {
+        if (userHasDuck)
+        {
+            NBDexMenu.gameObject.SetActive(false);
+            MallardMenu.gameObject.SetActive(true);
+        }
+    }
+
+    public void closeMallardNBDex()
+    {
+        NBDexMenu.gameObject.SetActive(true);
+        MallardMenu.gameObject.SetActive(false);
+    }
+    public void openEagleNBDex()
+    {
+        if (userHasEagle)
+        {
+            NBDexMenu.gameObject.SetActive(false);
+            EagleMenu.gameObject.SetActive(true);
+        }
+    }
+    public void closeEagleNBDex()
+    {
+        NBDexMenu.gameObject.SetActive(true);
+        EagleMenu.gameObject.SetActive(false);
+    }
+    public void openWolfNBDex()
+    {
+        if (userHasWolf)
+        {
+            NBDexMenu.gameObject.SetActive(false);
+            WolfMenu.gameObject.SetActive(true);
+        }
+    }
+
+    public void closeWolfNBDex()
+    {
+        NBDexMenu.gameObject.SetActive(true);
+        WolfMenu.gameObject.SetActive(false);
     }
 
     private void ShowToast(string message) {

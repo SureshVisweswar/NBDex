@@ -9,8 +9,6 @@ class User
 {
     public string username;
     public string email;
-    public string[] NBDexEntries;
-    public string[] collectables;
 
     public User() { 
     }

@@ -1,31 +1,46 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AnimalClick
+    - AnimalSpawnController
+    - LoginBackgroundSpin
     - Mapbox.Examples.CameraBillboard
     - Mapbox.Examples.DragableDirectionWaypoint
     - Mapbox.Examples.FeatureUiMarker
+    - Mapbox.Examples.ImmediatePositionWithLocationProvider
     - Mapbox.Examples.LabelTextSetter
     - Mapbox.Examples.MakiHelper
     - Mapbox.Examples.PoiLabelTextSetter
     - Mapbox.Examples.PoiMarkerHelper
+    - Mapbox.Examples.RotateWithLocationProvider
     - Mapbox.Examples.TextMeshOutline
+    - Mapbox.Unity.Location.AngleSmoothingAverage
+    - Mapbox.Unity.Location.AngleSmoothingLowPass
+    - Mapbox.Unity.Location.AngleSmoothingNoOp
+    - Mapbox.Unity.Location.DeviceLocationProvider
+    - Mapbox.Unity.Location.DeviceLocationProviderAndroidNative
+    - Mapbox.Unity.Location.EditorLocationProviderLocationLog
+    - Mapbox.Unity.Location.LocationArrayEditorLocationProvider
+    - Mapbox.Unity.Location.LocationProviderFactory
+    - Mapbox.Unity.Location.TransformLocationProvider
+    - Mapbox.Unity.Map.AbstractMap
+    - Mapbox.Unity.Map.InitializeMapWithLocationProvider
+    - Mapbox.Unity.Map.MapVisualizer
     - Mapbox.Unity.MeshGeneration.Data.AtlasInfo
     - Mapbox.Unity.MeshGeneration.Modifiers.ModifierStack
     - Mapbox.Unity.MeshGeneration.Modifiers.PrefabModifier
     - Mapbox.Unity.MeshGeneration.Modifiers.ReplaceFeatureCollectionModifier
     - Mapbox.Unity.Utilities.DebugTools.SceneData
     - Mapbox.Unity.Utilities.DebugTools.ScenesList
+    - Mapbox.Unity.Utilities.Runnable
+    - Player
+    - PreservedData
     - ScriptablePalette
     - UIInterface
+    - UIManager
     - UnityARKitPluginSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -39,6 +54,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.Scrollbar
@@ -56,6 +72,326 @@ ScriptsOnlyBuild:
     - DefaultTrackableEventHandler
   sceneClasses:
     Assets/Scenes/Animal Scenes/Duck.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11530}
+    - Class: 114
+      Script: {instanceID: 11532}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11540}
+    - Class: 114
+      Script: {instanceID: 11544}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12396}
+    - Class: 114
+      Script: {instanceID: 12528}
+    - Class: 114
+      Script: {instanceID: 13228}
+    - Class: 114
+      Script: {instanceID: 14112}
+    - Class: 114
+      Script: {instanceID: 14604}
+    - Class: 114
+      Script: {instanceID: 15374}
+    - Class: 114
+      Script: {instanceID: 76354}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Animal Scenes/Eagle1.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11530}
+    - Class: 114
+      Script: {instanceID: 11532}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11540}
+    - Class: 114
+      Script: {instanceID: 11544}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12396}
+    - Class: 114
+      Script: {instanceID: 12528}
+    - Class: 114
+      Script: {instanceID: 13228}
+    - Class: 114
+      Script: {instanceID: 14112}
+    - Class: 114
+      Script: {instanceID: 14604}
+    - Class: 114
+      Script: {instanceID: 15374}
+    - Class: 114
+      Script: {instanceID: 76354}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Animal Scenes/Eagle2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11530}
+    - Class: 114
+      Script: {instanceID: 11532}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11540}
+    - Class: 114
+      Script: {instanceID: 11544}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12396}
+    - Class: 114
+      Script: {instanceID: 12528}
+    - Class: 114
+      Script: {instanceID: 13228}
+    - Class: 114
+      Script: {instanceID: 14112}
+    - Class: 114
+      Script: {instanceID: 14604}
+    - Class: 114
+      Script: {instanceID: 15374}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Animal Scenes/Wolf.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11530}
+    - Class: 114
+      Script: {instanceID: 11532}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11540}
+    - Class: 114
+      Script: {instanceID: 11544}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12396}
+    - Class: 114
+      Script: {instanceID: 12528}
+    - Class: 114
+      Script: {instanceID: 13228}
+    - Class: 114
+      Script: {instanceID: 14112}
+    - Class: 114
+      Script: {instanceID: 14604}
+    - Class: 114
+      Script: {instanceID: 15374}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMapView/MainMapView.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -93,92 +429,116 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11632}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11526}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11530}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11540}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11650}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11826}
+    - Class: 114
+      Script: {instanceID: 11868}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 11948}
     - Class: 114
       Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12102}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12150}
     - Class: 114
-      Script: {instanceID: 12328}
+      Script: {instanceID: 12164}
     - Class: 114
-      Script: {instanceID: 12500}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12514}
+      Script: {instanceID: 12422}
     - Class: 114
-      Script: {instanceID: 12552}
+      Script: {instanceID: 12550}
     - Class: 114
-      Script: {instanceID: 12576}
+      Script: {instanceID: 12562}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12724}
     - Class: 114
-      Script: {instanceID: 12602}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12712}
+      Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 13210}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 13338}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 13388}
     - Class: 114
-      Script: {instanceID: 12984}
-    - Class: 114
-      Script: {instanceID: 13400}
-    - Class: 114
-      Script: {instanceID: 13418}
-    - Class: 114
-      Script: {instanceID: 13646}
+      Script: {instanceID: 13444}
     - Class: 114
       Script: {instanceID: 13882}
     - Class: 114
-      Script: {instanceID: 14102}
+      Script: {instanceID: 13936}
     - Class: 114
-      Script: {instanceID: 14156}
+      Script: {instanceID: 14078}
     - Class: 114
-      Script: {instanceID: 14344}
+      Script: {instanceID: 14090}
     - Class: 114
-      Script: {instanceID: 14498}
+      Script: {instanceID: 14096}
     - Class: 114
-      Script: {instanceID: 14524}
+      Script: {instanceID: 14264}
     - Class: 114
-      Script: {instanceID: 14846}
+      Script: {instanceID: 14290}
     - Class: 114
-      Script: {instanceID: 14852}
+      Script: {instanceID: 14522}
     - Class: 114
-      Script: {instanceID: 14918}
+      Script: {instanceID: 14562}
     - Class: 114
-      Script: {instanceID: 14944}
+      Script: {instanceID: 14604}
     - Class: 114
-      Script: {instanceID: 15080}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 15632}
+      Script: {instanceID: 14674}
     - Class: 114
-      Script: {instanceID: 15868}
+      Script: {instanceID: 14698}
+    - Class: 114
+      Script: {instanceID: 14808}
+    - Class: 114
+      Script: {instanceID: 14832}
+    - Class: 114
+      Script: {instanceID: 14838}
+    - Class: 114
+      Script: {instanceID: 15012}
+    - Class: 114
+      Script: {instanceID: 15028}
+    - Class: 114
+      Script: {instanceID: 15172}
+    - Class: 114
+      Script: {instanceID: 15374}
+    - Class: 114
+      Script: {instanceID: 15422}
+    - Class: 114
+      Script: {instanceID: 15454}
+    - Class: 114
+      Script: {instanceID: 15608}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -217,16 +577,22 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: aeb62f729c52c814dec86c47dcac1471
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: aeb62f729c52c814dec86c47dcac1471
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
+      Hash: ed9f9ba4f86811683bd63e5cc6dae905
+    assemblyName: Vuforia.UnityExtensions.dll
+    namespaceName: Vuforia
+    className: AnchorBehaviour
   - hash:
       serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
@@ -599,12 +965,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RectMask2D
-  - hash:
-      serializedVersion: 2
-      Hash: ed9f9ba4f86811683bd63e5cc6dae905
-    assemblyName: Vuforia.UnityExtensions.dll
-    namespaceName: Vuforia
-    className: AnchorBehaviour
   - hash:
       serializedVersion: 2
       Hash: 127837f608f41b15774badb9a5791616
@@ -1885,7 +2245,7 @@ ScriptsOnlyBuild:
     className: ARPointCloudParticleVisualizer
   - hash:
       serializedVersion: 2
-      Hash: 73adb56b23d6567d3be5bc1156e551c6
+      Hash: 99099cfa472d44e91ded508f4d57f914
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -2989,5 +3349,9 @@ ScriptsOnlyBuild:
     className: ModifierStack
   platform: 13
   scenePathNames:
+  - Assets/Scenes/MainMapView/MainMapView.unity
   - Assets/Scenes/Animal Scenes/Duck.unity
-  playerPath: C:/Users/sures/Testing/test.apk
+  - Assets/Scenes/Animal Scenes/Eagle1.unity
+  - Assets/Scenes/Animal Scenes/Eagle2.unity
+  - Assets/Scenes/Animal Scenes/Wolf.unity
+  playerPath: X:/NBDex/NBDex/TestBuild.apk
